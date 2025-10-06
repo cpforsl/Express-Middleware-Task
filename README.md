@@ -1,15 +1,34 @@
 # Express Middleware Task
 
-This project is a full-stack JavaScript application demonstrating the use of middleware in an Express server with a React front end.
+A full-stack JavaScript application built with the MERN stack.  
+This project demonstrates Express middleware, JWT authentication, and a React + Vite front end for managing a to-do list.
 
-The backend handles authentication, input validation, and access control using custom middleware functions.  
-The frontend provides a simple interface for users to register, log in, and manage a list of personal to-do items.
+## Features
+- Register and log in using a Gmail address only (`@gmail.com`)
+- Passwords hashed with bcrypt
+- JWT-based authentication
+- Create, update, complete, and delete personal todos
+- Middleware enforcement:
+  - Restricts access to Gmail users
+  - Requires JSON for requests with bodies
+  - Limits todo text to 140 characters
+  - Authenticates JWTs on all `/api/todos` routes
 
-## Key Features
-- User registration and login restricted to Gmail addresses.
-- Middleware that:
-  - Enforces JSON request format.
-  - Limits to-do text to 140 characters.
-  - Validates JWT tokens for secure routes.
-- CRUD operations for user-specific to-do items.
-- React interface for adding, editing, completing, and deleting tasks.
+## Getting Started
+
+### 1. Backend Setup
+cd server
+cp .env.example .env
+npm install
+npm run dev
+
+### 2. Frontend Setup
+cd client
+npm install
+npm run dev
+
+## Usage
+- Open http://localhost:5173
+- Register with a Gmail address
+- Log in to access your todos
+- Add, edit, or delete todo
